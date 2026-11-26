@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">Frontend_Hospital</string>
+
+    <string name="common_back">Volver</string>
+    <string name="common_back_home">Volver a Home</string>
+    <string name="common_icon_description">Icono de la pantalla</string>
+
+    <string name="home_title">Bienvenido al Hospital</string>
+    <string name="home_subtitle">Gestión de enfermeros</string>
+    <string name="home_btn_login">Iniciar sesión</string>
+    <string name="home_btn_list">Listar enfermeros</string>
+    <string name="home_btn_search">Buscar enfermero</string>
+    <string name="home_clicks">Pulsaciones: %1$d</string>
+    <string name="home_btn_click">Pulsa aquí</string>
+
+    <string name="login_title">Inicio de sesión</string>
+    <string name="login_user_label">Usuario</string>
+    <string name="login_password_label">Contraseña</string>
+    <string name="login_btn_validate">Validar</string>
+    <string name="login_message_ok">Datos introducidos correctamente</string>
+    <string name="login_message_empty">Rellena todos los campos</string>
+
+    <string name="list_title">Enfermeros registrados</string>
+    <string name="list_nurse_name">Nombre: %1$s</string>
+    <string name="list_nurse_email">Email: %1$s</string>
+    <string name="list_btn_expand">Ver detalles</string>
+    <string name="list_btn_collapse">Ocultar detalles</string>
+
+    <string name="search_title">Buscar enfermeros</string>
+    <string name="search_label">Nombre del enfermero</string>
+    <string name="search_btn">Buscar</string>
+    <string name="search_results_title">Resultados (%1$d)</string>
+    <string name="search_btn_select">Seleccionar</string>
+    <string name="search_selected">Seleccionado: %1$s</string>
 </resources>
