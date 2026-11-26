@@ -1,11 +1,12 @@
 package com.example.frontend_hospital.ui
 
 import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
 
 enum class Pantalla { HOME, LOGIN, LISTA, BUSQUEDA }
 
 @Composable
-fun AppNavigation() {
+fun AppNavigation(modifier: Modifier) {
     var pantalla by remember { mutableStateOf(Pantalla.HOME) }
 
     when (pantalla) {

@@ -16,14 +16,8 @@ import com.example.frontend_hospital.ui.theme.Frontend_HospitalTheme
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.example.frontend_hospital.ui.HomeScreen
-import com.example.frontend_hospital.ui.theme.Frontend_HospitalTheme
+import com.example.frontend_hospital.ui.AppNavigation
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,17 +26,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             Frontend_HospitalTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    HomeScreen(
-                        onGoLogin = {},
-                        onGoList = {},
-                        onGoSearch = {},
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    AppNavigation(modifier = Modifier.padding(innerPadding))
+                }
                 }
             }
         }
     }
-}
+
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
