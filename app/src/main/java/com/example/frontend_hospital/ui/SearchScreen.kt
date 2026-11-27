@@ -49,7 +49,7 @@ fun SearchScreen(
     var query by remember { mutableStateOf("") }
     var searched by remember { mutableStateOf(false) }
     var selected by remember { mutableStateOf("") }
-
+    var clicks by remember { mutableStateOf(0) }
     // Simulación: el resultado siempre muestra 3 enfermeros (sin conexión al BackEnd)
     val results = remember {
         listOf(
@@ -158,7 +158,23 @@ fun SearchScreen(
         }
 
         Spacer(modifier = Modifier.height(16.dp))
+        Text(
+            text = stringResource(id = R.string.home_clicks, clicks),
+            fontSize = 16.sp,
+            color = colorResource(id = R.color.text_primary)
+        )
 
+        Spacer(modifier = Modifier.height(8.dp))
+        Button(
+            onClick = { clicks = clicks + 1 },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = colorResource(id = R.color.primary_dark),
+                contentColor = colorResource(id = R.color.text_on_primary)
+            )
+        ) {
+            Text(text = stringResource(id = R.string.home_btn_click))
+        }
+        Spacer(modifier = Modifier.height(12.dp))
         Button(
             onClick = onBack,
             colors = ButtonDefaults.buttonColors(
@@ -169,6 +185,7 @@ fun SearchScreen(
         ) {
             Text(text = stringResource(id = R.string.common_back_home))
         }
+
     }
 }
 

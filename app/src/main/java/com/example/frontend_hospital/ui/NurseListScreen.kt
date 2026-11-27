@@ -52,7 +52,7 @@ fun NurseListScreen(
             Nurse("Elena Ruiz", "elena.ruiz@hospital.com")
         )
     }
-
+    var clicks by remember { mutableStateOf(0) }
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -89,7 +89,23 @@ fun NurseListScreen(
         }
 
         Spacer(modifier = Modifier.height(16.dp))
+        Text(
+            text = stringResource(id = R.string.home_clicks, clicks),
+            fontSize = 16.sp,
+            color = colorResource(id = R.color.text_primary)
+        )
 
+        Spacer(modifier = Modifier.height(8.dp))
+        Button(
+            onClick = { clicks = clicks + 1 },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = colorResource(id = R.color.primary_dark),
+                contentColor = colorResource(id = R.color.text_on_primary)
+            )
+        ) {
+            Text(text = stringResource(id = R.string.home_btn_click))
+        }
+        Spacer(modifier = Modifier.height(12.dp))
         Button(
             onClick = onBack,
             colors = ButtonDefaults.buttonColors(
@@ -100,6 +116,7 @@ fun NurseListScreen(
         ) {
             Text(text = stringResource(id = R.string.common_back_home))
         }
+
     }
 }
 

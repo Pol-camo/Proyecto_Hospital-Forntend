@@ -45,7 +45,7 @@ fun LoginScreen(
     var password by remember { mutableStateOf("") }
     var mensajeValidacion by remember { mutableStateOf("") }
     var esValido by remember { mutableStateOf(false) }
-
+    var clicks by remember { mutableStateOf(0) }
     val textoOk = stringResource(id = R.string.login_message_ok)
     val textoVacio = stringResource(id = R.string.login_message_empty)
 
@@ -155,6 +155,24 @@ fun LoginScreen(
 
         Spacer(modifier = Modifier.height(24.dp))
 
+
+        Text(
+            text = stringResource(id = R.string.home_clicks, clicks),
+            fontSize = 16.sp,
+            color = colorResource(id = R.color.text_primary)
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+        Button(
+            onClick = { clicks = clicks + 1 },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = colorResource(id = R.color.primary_dark),
+                contentColor = colorResource(id = R.color.text_on_primary)
+            )
+        ) {
+            Text(text = stringResource(id = R.string.home_btn_click))
+        }
+        Spacer(modifier = Modifier.height(12.dp))
         Button(
             onClick = onBack,
             colors = ButtonDefaults.buttonColors(
@@ -166,6 +184,7 @@ fun LoginScreen(
             Text(text = stringResource(id = R.string.common_back_home))
         }
     }
+
 }
 
 @Preview(showBackground = true, name = "Login Preview")
